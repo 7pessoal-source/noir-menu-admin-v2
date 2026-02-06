@@ -1,0 +1,7 @@
+{
+  "name": "Noir Menu - Painel Administrativo",
+  "description": "Painel administrativo completo para gerenciamento de cardápio digital, incluindo CRUD de categorias, produtos, configurações de entrega e integração com Supabase.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
