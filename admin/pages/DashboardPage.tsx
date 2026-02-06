@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
-import { Tag, Package, Clock, TrendingUp } from 'lucide-react';
+import { Tag, Package, TrendingUp } from 'lucide-react';
 
 const DashboardPage: React.FC = () => {
   const [stats, setStats] = useState({ products: 0, categories: 0, available: 0 });
@@ -53,29 +53,10 @@ const DashboardPage: React.FC = () => {
         <Card title="Produtos Ativos" value={stats.available} icon={TrendingUp} color="bg-emerald-500/10 text-emerald-500" />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-          <div className="flex items-center gap-2 mb-6">
-            <Clock className="w-5 h-5 text-zinc-500" />
-            <h2 className="font-bold text-lg">Ações Rápidas</h2>
-          </div>
-          <div className="space-y-3">
-            <button className="w-full text-left px-4 py-3 rounded-xl bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700 transition-colors">
-              + Adicionar novo produto
-            </button>
-            <button className="w-full text-left px-4 py-3 rounded-xl bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700 transition-colors">
-              + Criar nova categoria
-            </button>
-            <button className="w-full text-left px-4 py-3 rounded-xl bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700 transition-colors">
-              ⚙️ Atualizar número do WhatsApp
-            </button>
-          </div>
-        </div>
-
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col justify-center items-center text-center">
-            <Package className="w-12 h-12 text-zinc-700 mb-4" />
-            <p className="text-zinc-400 max-w-xs">Seu cardápio está online e pronto para receber pedidos.</p>
-        </div>
+      <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-12 flex flex-col justify-center items-center text-center">
+          <Package className="w-16 h-16 text-zinc-700 mb-4" />
+          <h3 className="text-xl font-bold text-white mb-2 uppercase italic">Cardápio Online</h3>
+          <p className="text-zinc-400 max-w-xs">Seu cardápio está configurado e pronto para receber pedidos via WhatsApp.</p>
       </div>
     </div>
   );
